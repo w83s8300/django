@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <script>
+ function dbCheck(checkMsg)
+ {  
+   return confirm(checkMsg);
+ }
+  </script>
+</head>
+
+<body>
+<h1>資料更新 </h1>
+
+<form action="/updateMsg/{{data.0}}/" method="POST">
+{% csrf_token %}
+
+<!-- <input name="id" type="text" hidden> -->
+
+<table border="1">
+<tr>  <th width="150px">項目</th>
+      <th width="300px">舊資料</th>  
+   <th width="300px">新資料</th></tr>
+<tr>  <th>標題</th>
+      <td>{{data.7}}</td>  
+   <td><input name="title" type="text" value="{{data.7}}" style="width:100%;"></td></tr>
+<tr>  <th>內容</th>
+      <td>{{data.4}}</td>  
+   <td><textarea name="content" rows="10" cols="45">{{data.4}}</textarea></td></tr>
+<tr>  <th>tag標籤</th>
+      <td>{{data.5}}</td>  
+   <td><input name="tag" type="text" value="{{data.5}}" style="width:100%;"></td></tr>
+<tr>  <th>作者</th>
+      <td>{{data.3}}</td>  
+   <td><input name="author" type="text" value="{{data.3}}" style="width:100%;"></td></tr>
+<tr>  <td colspan="3" align="center" >
+         <input type="submit" value="送出" style="width:100%;" onclick="return dbCheck('確定修改留言嗎?')"> 
+   </td></tr>
+</table>
+
+<br>
+</form>
+
+</body>

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+<style type='text/css'>
+.link_class {
+  width: 80px;
+  height: 25px;
+  color: #000000;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  background: #EEEEEE;
+  text-decoration: none;
+  line-height: 30px;
+  border-style:solid;
+  border-width:1px;
+}
+
+.link_class:hover {
+  background: #dddddd;
+}
+</style>
+
+  <script>
+ function dbCheck(checkMsg)
+ {  
+   return confirm(checkMsg);
+ }
+  </script>
+</head>
+
+
+<body>
+<h1> 留言列表 </h1>
+
+<table border=1>
+    <thead>
+        <tr>
+            <th>編號</th><th>標題</th><th>內容</th>
+   <th>作者</th><th>時間</th><th>動作</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+{% for i in data %}
+    <tr>
+        <td>{{forloop.counter}}</td> <td>{{i.7}}</td><td>{{i.4}}</td>
+  <td>{{i.3}}</td><td>{{i.6}}</td>
+  <td>  
+      <a href="/updateMsg/{{i.0}}" onclick="return dbCheck('確定更新嗎')">編輯</a> | 
+    <!-- <form action="/updateMsg/" method="POST"> -->
+    <!-- <input name="id" type="text" hidden value="{{i.0}}"> -->
+    <!-- <input type=submit value="編輯"></form>  -->
+      <a href="/deleteMsg/{{i.0}}" onclick="return dbCheck('確定刪除嗎')">刪除</a> 
+     </td> 
+    </tr>
+{% endfor %}
+
+    </tbody>
+</table>
+</p>
+<a class="link_class" href="/receivedMessge/">新增留言</a></p>
+<button onclick="window.location.href='/receivedMessge/'">新增留言</button>

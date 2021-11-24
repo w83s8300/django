@@ -1,0 +1,16 @@
+
+
+
+<body>
+
+    <h1> 新增留言 </h1>
+    
+    <form action="/receivedMessge/" method="POST">
+    {% csrf_token %}
+    留言標題: <input name="title" type="text" style="width:350px;"><p> 
+    留言內容: <br><textarea name="content" rows="10" cols="55"></textarea><p>
+    tag標籤:<input name="tag" type="text" style="width:150px;">
+    發表人:<input name="author" type="text" style="width:150px;">
+    <input type="submit"> 
+    </form>
+    </body>
