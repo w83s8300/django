@@ -3,8 +3,11 @@
 # from django.urls import path
 from django.conf.urls import url
 from msgboardAPP.views import *#讀取msgboardAPP裡的views.py
-
+from newsApp.views import *
 urlpatterns = [
+#************newsApp**********
+    url(r'^newsSearch/$', newsSearch),
+
 
  
 #************ msgboardapp *************** 
