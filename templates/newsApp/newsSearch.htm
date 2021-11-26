@@ -1,0 +1,20 @@
+<html>
+
+<body>
+    <h1>新聞搜尋</h1>>
+    <form action="/newsSearch/" method="POST">
+        {% csrf_token %}
+        <input name="udn" type="checkbox">UBN
+        <input name="kimo" type="checkbox">UBN
+        <input name="bbc" type="checkbox">UBN
+        <p>
+            新聞搜尋:<input name="keyword" type="text"><p>
+                <input type="submit" value="搜尋"> 
+
+
+    </form>>
+
+</body>>
+
+
+</html>>
